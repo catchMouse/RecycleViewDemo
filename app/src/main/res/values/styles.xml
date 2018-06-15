@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        <item name="listDivider">@drawable/self_divider</item>
+    </style>-->
+
+    <style name="AppTheme">
+        <item name="android:listDivider">@drawable/self_divider</item>
+    </style>
+
+</resources>
