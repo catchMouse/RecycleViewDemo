@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:textColor="#ffffff"
+    android:textSize="24px"
+    android:id="@+id/item_pic_content"
+    android:gravity="center"
+    android:src="@mipmap/ic_launcher"
+    />
