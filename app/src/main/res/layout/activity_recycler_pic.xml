@@ -11,6 +11,13 @@
         android:layout_height="80dp"
         android:id="@+id/show_current_pic"
         android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <View
+        android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:background="#000000"
         />
 
     <android.support.v7.widget.RecyclerView
