@@ -44,6 +44,17 @@ public class MyItemDecoration_Grid_Staggered extends RecyclerView.ItemDecoration
         drawVertical(c, parent);
     }
 
+    @Override
+    public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        super.onDrawOver(c, parent, state);
+
+       /* if (parent.getLayoutManager() == null || mDivider == null) {
+            return;
+        }
+        drawHorizontal(c, parent);
+        drawVertical(c, parent);*/
+    }
+
     //横线分隔符
     public void drawHorizontal(Canvas c, RecyclerView parent) {
         int childCount = parent.getChildCount();

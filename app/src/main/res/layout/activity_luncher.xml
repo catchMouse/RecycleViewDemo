@@ -19,4 +19,11 @@
         android:text="recyclerview运用-相册案例"
         android:onClick="startUseForPic"
         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="recyclerview运用-扩展header+footer"
+        android:onClick="ExtendUseForRecyclerView"
+        />
 </LinearLayout>

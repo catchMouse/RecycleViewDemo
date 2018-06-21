@@ -36,16 +36,16 @@ import java.util.ArrayList;
 
 public class RecyclerPicActivity extends Activity {
 
-    public static final String TAG = "MainActivity";
+    public static final String TAG = "RecyclerPicActivity";
 //    private DataAdapter3 mAdapter;
     private DataOnLineAdapter mAdapter;
     private RecyclerView mRecyclerView;
-    ImageView mCurrentPic;
+    private ImageView mCurrentPic;   //被点击的ImageView
 
-    ImageLruCache imageLruCache;
+    private ImageLruCache imageLruCache;
 
     //本地数据
-    int[] datas = new int[]{R.drawable.a1, R.drawable.a2, R.drawable.a3, R.drawable.a4, R.drawable.a5,
+    private int[] datas = new int[]{R.drawable.a1, R.drawable.a2, R.drawable.a3, R.drawable.a4, R.drawable.a5,
             R.drawable.a6, R.drawable.a7, R.drawable.a8, R.drawable.a9, R.drawable.a10,
             R.drawable.a11, R.drawable.a12, R.drawable.a13, R.drawable.a14, R.drawable.a15,
             R.drawable.a16, R.drawable.a17, R.drawable.a18, R.drawable.a19, R.drawable.a20,
@@ -57,7 +57,7 @@ public class RecyclerPicActivity extends Activity {
     private DiskLruCache mDiskLruCache;
 
     private void initData() {
-        Log.d(TAG,"size:"+datas.length);
+        //Log.d(TAG,"initData.localdata.size:"+datas.length);
 
         mPngSites.clear();
         for (int i=1; i<=25; i++) {
@@ -65,7 +65,7 @@ public class RecyclerPicActivity extends Activity {
             sb.append(PREFIX);
             sb.append(i);
             sb.append(SUFFIX);
-            Log.d(TAG, "site:" + sb.toString());
+            Log.d(TAG, "initData.site:" + sb.toString());
             mPngSites.add(sb.toString());
         }
     }

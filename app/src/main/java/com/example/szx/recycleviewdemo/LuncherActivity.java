@@ -23,4 +23,10 @@ public class LuncherActivity extends Activity {
         intent.setClass(this, RecyclerPicActivity.class);
         startActivity(intent);
     }
+    public void ExtendUseForRecyclerView(View v){
+        Intent intent = new Intent();
+        intent.setClass(this, HeaderAndFooterActivity.class);
+        startActivity(intent);
+    }
+
 }
