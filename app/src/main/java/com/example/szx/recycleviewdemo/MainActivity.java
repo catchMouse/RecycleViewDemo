@@ -2,6 +2,7 @@ package com.example.szx.recycleviewdemo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
@@ -43,10 +44,12 @@ public class MainActivity extends Activity {
         initData(); //模拟数据
         initAdapter(); //创建Adapter
         mRecyclerView = (RecyclerView)findViewById(R.id.view_recyclerview);
-        //initRecyclerView_line();   //线性布局
+        initRecyclerView_line();   //线性布局
         //initRecyclerView_grid();  //网格布局
         //initRecyclerView_staggeredGrid();  //瀑布流式的布局
-        initRecyclerView_staggeredGrid_Anim();  //瀑布流式的布局 + 动画
+//        initRecyclerView_staggeredGrid_Anim();  //瀑布流式的布局 + 动画
+
+
     }
 
     //线性布局方式

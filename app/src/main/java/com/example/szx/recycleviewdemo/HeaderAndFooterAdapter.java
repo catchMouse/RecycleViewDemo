@@ -102,8 +102,9 @@ public class HeaderAndFooterAdapter extends RecyclerView.Adapter {
         return headerViews.size() + footerViews.size() + baseAdapter.getItemCount();
     }
 
-    //为啥通过重写该方法来对recyclerView的不同不同管理器进行区别  ????
     //其实一个holder对象就是一个item的封装, 也就可以获取到item的位置等一系列信息,在onAttachedToRecyclerView中无法通过recyclerView做到
+    //view创建好后attached到window上，意味着item即将被用户可见
+    //holder.itemview.lp.mviewholder = holder
     @Override
     public void onViewAttachedToWindow(RecyclerView.ViewHolder holder) {
         super.onViewAttachedToWindow(holder);
@@ -117,6 +118,7 @@ public class HeaderAndFooterAdapter extends RecyclerView.Adapter {
         //通过StaggeredGridLayoutManager.LayoutParams的setFullSpan方法修改item所占的span
         if (isHeaderView(layoutPos) || isFooterView(layoutPos)) {
             ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
+            //通过lp判断其管理器类型
             if (lp != null && lp instanceof StaggeredGridLayoutManager.LayoutParams) {
                 ((StaggeredGridLayoutManager.LayoutParams) lp).setFullSpan(true);
             }
@@ -124,7 +126,7 @@ public class HeaderAndFooterAdapter extends RecyclerView.Adapter {
 
     }
 
-    //为啥通过重写该方法来对recyclerView的不同不同管理器进行区别  ????
+    //setAdapter(adapter)函数内部调用的，这个时候item还未measure/layout,还未实际绘制到界面上
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
